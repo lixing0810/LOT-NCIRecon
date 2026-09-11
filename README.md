@@ -140,23 +140,7 @@ The second-stage candidate centers satisfy the paper-consistent constraint:
 
 ```text
 ||r_j - r_i||_2 <= C,  C = 50 pixels.
-```
 
-For a quick end-to-end check with one local raw `.npy` slice, the smoke script
-duplicates the sample into three adjacent slices, runs stage 1 with a tiny
-`top_k`, trains the matcher for one epoch, runs stage 2 on one center slice,
-and verifies that the resulting patches can be loaded by the reconstruction
-dataset:
-
-```bash
-python scripts/smoke_ot_pipeline.py \
-  --sample /path/to/one_raw_slice.npy \
-  --work-dir outputs/smoke_ot \
-  --phase A \
-  --top-k 2 \
-  --train-size 2 \
-  --epochs 1
-```
 
 ## 3. Train Reconstruction Models
 
