@@ -69,8 +69,6 @@ All reproducibility settings are collected in `configs/default.yaml`. Important 
 
 - phases: `A`, `V`, and `D`;
 - stage-1 candidate count: `10000`;
-- stage-1 quality threshold: `0.735`;
-- stage-1 search radius: `20` pixels;
 - stage-2 local spatial constraint: `C = 50` pixels;
 - patch size: `64 x 64`;
 - reconstruction training iterations per phase: `100000`.
@@ -199,6 +197,13 @@ Please cite the associated paper if this repository is useful in your research.
   doi={10.1109/TIP.2026.3727893}
 }
 ```
+
+## TIPS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Resources for research purpose only, shall not be used for commercial purposes! All copyrights belong to the original anthors. The technology has applied for patents. If you want to purchase the patents for commercial purposes, please contact the author: Xing Li, listar0810@mail.xjtu.edu.cn. Thank you!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 ## License
 
