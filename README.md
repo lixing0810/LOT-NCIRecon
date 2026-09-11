@@ -57,8 +57,6 @@ Python 3.9 or newer is recommended.
 ```bash
 git clone https://github.com/lixing0810/LOT-NCIRecon.git
 cd LOT-NCIRecon
-python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 pip install -e .
 ```
