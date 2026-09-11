@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lot-ncirecon"
+version = "0.1.0"
+description = "Local-optimal-transport-guided multi-phase CECT reconstruction"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "Xing Li"}]
+dependencies = [
+  "numpy>=1.23",
+  "Pillow>=9.0",
+  "PyYAML>=6.0",
+  "scipy>=1.9",
+  "scikit-image>=0.20",
+  "scikit-learn>=1.1",
+  "torch>=2.0",
+  "torchvision>=0.15",
+  "tqdm>=4.65",
+]
+
+[tool.setuptools.packages.find]
+include = ["lot_ncirecon*"]

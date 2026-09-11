@@ -1,0 +1,18 @@
+{
+  "phase": "A",
+  "intensity_scale": "[0, 1]",
+  "checkpoint": "latest.pth",
+  "dataset": {
+    "num_patients": 4,
+    "num_unique_slices": 1260,
+    "patient_identifiers_included": false
+  },
+  "macro_patient_statistics": {
+    "PSNR": {"mean": 36.98, "std": 0.39},
+    "SSIM": {"mean": 0.9660, "std": 0.0016},
+    "RMSE": {"mean": 0.0153, "std": 0.0001},
+    "FID": {"mean": 21.21, "std": 1.01},
+    "sFID": {"mean": 7.12, "std": 0.62},
+    "KID": {"mean": 0.11, "std": 0.02}
+  }
+}

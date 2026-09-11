@@ -1,0 +1,100 @@
+phases: [A, V, D]
+
+data:
+  train_template: /public/home/lixing/ct_cross_modal_ten_dose/selected_patches_onlyA_public/train_10000/selected_triplets
+  monitor_template: null
+  crop_size: 64
+  monitor_crop_size: 64
+  max_train_files: null
+  num_monitor_files: 32
+  num_monitor_images: 8
+  random_flip: false
+  train_manifest: null
+  monitor_manifest: null
+  rebuild_manifest: false
+  sort_files: false
+
+model:
+  disc_dim: 64
+  repeat_num: 6
+  use_source_as_fake: true
+
+training:
+  batch_size: 16
+  num_workers: 0
+  max_iter: 100000
+  resume: /home/lixing/LOT-NCIRecon/outputs/reconstruction/A/checkpoints/latest.pth
+  g_lr: 0.0001
+  d_lr: 0.00005
+  weight_decay: 0.0001
+  warmup_steps: 1000
+  min_lr_ratio: 0.05
+  use_amp: false
+  use_ema: false
+  ema_decay: 0.999
+  use_ema_for_monitor: true
+  log_freq: 50
+  save_freq: 10000
+  seed: 2026
+  deterministic: false
+
+loss:
+  w_recon: 1.0
+  w_aux: 0.3
+  w_ncct: 0.2
+  w_low: 0.1
+  w_grad: 0.2
+  w_ssim: 0.05
+  w_adv_img: 0.02
+  w_adv_grad: 0.01
+  w_d_img: 1.0
+  w_d_grad: 1.0
+  charb_eps: 0.001
+  g_grad_clip: 1.0
+  d_grad_clip: 1.0
+
+output:
+  template: outputs/reconstruction/{phase}
+
+candidate:
+  phase: A
+  data_folder: /public/home/lixing/ct_cross_modal_ten_dose/train_reg_N_new_all_same
+  output_root: outputs/candidates
+  top_k: 10000
+  quality_threshold: 0.735
+  beta: 0.5
+  beta_prime: 0.5
+  search_radius: 20
+  search_step: 4
+  seed: 2026
+
+selection:
+  phase: A
+  selected_root: null
+  data_folder: /public/home/lixing/ct_cross_modal_ten_dose/train_reg_N_new_all_same
+  output_root: outputs/ot_selection
+  spatial_constraint: 50
+  search_step: 4
+  train_size: 10000
+  score_threshold: 0.735
+  epochs: 100
+  batch_size: 256
+  infer_batch_size: 2048
+  lr: 0.0001
+  hidden_size: 256
+  num_layers: 2
+  negative_ratio: 1.0
+  negative_label_mode: similarity
+  seed: 2026
+  num_workers: 0
+  start_index: 1
+  max_test_slices: null
+
+test:
+  data_template: /public/home/lixing/ct_cross_modal_ten_dose/test_reg_N_new_all_same
+  checkpoint_template: /home/lixing/LOT-NCIRecon/outputs/reconstruction/A/checkpoints/latest.pth
+  output_template: outputs/test/{phase}
+  batch_size: 2
+  max_files: null
+  distribution_metrics: true
+  use_ema: false

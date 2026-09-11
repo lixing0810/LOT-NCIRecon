@@ -1,0 +1,46 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated paper."
+title: "LOT-NCIRecon"
+type: software
+authors:
+  - family-names: Li
+    given-names: Xing
+  - family-names: Wang
+    given-names: Miaomiao
+  - family-names: Zhang
+    given-names: Baoping
+  - family-names: Zhu
+    given-names: Shumeng
+  - family-names: Jin
+    given-names: Chao
+  - family-names: Yang
+    given-names: Yan
+  - family-names: Yang
+    given-names: Jian
+  - family-names: Ma
+    given-names: Jianhua
+repository-code: "https://github.com/lixing0810/LOT-NCIRecon"
+license: MIT
+date-released: 2026-08-18
+preferred-citation:
+  type: article
+  title: "Non-Contrast-Informed Low-Dose Multi-Phase Contrast-Enhanced CT Reconstruction via Local Optimal Transport"
+  authors:
+    - family-names: Li
+      given-names: Xing
+    - family-names: Wang
+      given-names: Miaomiao
+    - family-names: Zhang
+      given-names: Baoping
+    - family-names: Zhu
+      given-names: Shumeng
+    - family-names: Jin
+      given-names: Chao
+    - family-names: Yang
+      given-names: Yan
+    - family-names: Yang
+      given-names: Jian
+    - family-names: Ma
+      given-names: Jianhua
+  journal: "IEEE Transactions on Image Processing"
+  year: 2026
